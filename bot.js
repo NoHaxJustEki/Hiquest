@@ -44,7 +44,7 @@ client.on('message', msg => {
         const embed = new Discord.MessageEmbed()
             .setColor('#9003fc')
             .setTitle('**Hiquest Network | Server Info**')
-            .setDescription(`Not available yet!`)
+            .setDescription(`**Information About Server:**\n **Server IP Adress:**\n   - hiquest.network\n\n **Online:** No\n **Players Online:** Server is offline\n\n**Gamemodes:**\n   - UHC\n   -KitMap\n   -HCF`)
             .setFooter('Hiqeust Network | Season 02')
             .setTimestamp(new Date())
             msg.channel.send(embed)
