@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('Client is ready!');
     setInterval(function(){
-        const memberCount = client.guilds.get('731544230140444773').memberCount;
+        const memberCount = client.guilds.cache.get('731544230140444773').memberCount;
         client.user.setActivity(`${memberCount} members`, {type: 'WATCHING'});
 
     }, 5000);
@@ -12,8 +12,8 @@ client.on('ready', () => {
 })
 
 client.on('guildMemberAdd', member =>{
-    const guild = client.guilds.get('731544230140444773');
-    const channel = guild.channels.get('732364489420177439');
+    const guild = client.guilds.cache.get('731544230140444773');
+    const channel = guild.channels.cache.get('732364489420177439');
     const name = member.user.username
     const embed = new Discord.MessageEmbed()
         .setColor('#9003fc')
@@ -44,7 +44,7 @@ client.on('message', msg => {
         const embed = new Discord.MessageEmbed()
             .setColor('#9003fc')
             .setTitle('**Hiquest Network | Server Info**')
-            .setDescription(`**Information About Server:**\n **Server IP Adress:**\n   - hiquest.network\n\n **Online:** No\n **Players Online:** Server is offline\n\n**Gamemodes:**\n   - UHC\n   -KitMap\n   -HCF`)
+            .setDescription(`Not available yet!`)
             .setFooter('Hiqeust Network | Season 02')
             .setTimestamp(new Date())
             msg.channel.send(embed)
@@ -98,9 +98,9 @@ client.on('message', msg => {
 client.on('message', msg => {
     if(msg.content == "/lockdown set"){
         if(msg.member.hasPermission('ADMINISTRATOR')){
-            const guild = client.guilds.get('731544230140444773');
-            const role = guild.roles.get('732375607308059035')
-            guild.members.forEach(member => {
+            const guild = client.guilds.cache.get('731544230140444773');
+            const role = guild.roles.cache.get('732375607308059035')
+            guild.members.cache.forEach(member => {
                 member.roles.add(role)
             });
         } return;
@@ -111,9 +111,9 @@ client.on('message', msg => {
 client.on('message', msg => {
     if(msg.content == "/lockdown end"){
         if(msg.member.hasPermission('ADMINISTRATOR')){
-            const guild = client.guilds.get('731544230140444773');
-            const role = guild.roles.get('732375607308059035')
-            guild.members.forEach(member => {
+            const guild = client.guilds.cache.get('731544230140444773');
+            const role = guild.roles.cache.get('732375607308059035')
+            guild.members.cache.forEach(member => {
                 member.roles.remove(role)
             });
         } return;
