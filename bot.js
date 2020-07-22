@@ -69,6 +69,7 @@ client.on('message', msg => {
 
 client.on('message', async msg => {
     const words = ['http', 'https', 'discord.gg', 'discord.com', 'youtube.com', 'invite.gg', 'youtu.be', 'yt.com']
+    if(msg.author.id == "427430166319595531") return;
     for (var i = 0; i < words.length; i++) {
         if(msg.content.includes(words[i])){
             const embed = new Discord.MessageEmbed()
