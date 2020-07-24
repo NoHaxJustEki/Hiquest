@@ -13,6 +13,9 @@ client.on('ready', () =>{
 });
 
 client.on('guildMemberAdd', member =>{
+    member.guild.fetchInvites().then(invites => {
+        const Inviter = invites.array().filter(o => o.inviter.username)
+    });
     const member2 = member.user.username
     const guild = client.guilds.cache.get('735645868413288510')
     const role = guild.roles.cache.get('735649648727031908')
@@ -20,7 +23,7 @@ client.on('guildMemberAdd', member =>{
     const embed = new Discord.MessageEmbed()
         .setColor('#115aed')
         .setTitle('**Welcome to Coomunity Discord Server**')
-        .setDescription(`Dobrodosli ${member2} na nas server.\nNadamo se da ce te uzivati.\n\nMi smo zajednica koja se trudi da ostvari komunikaciju izmedju ljudi, kao i da vam doprinese odlicnu zabavu.\nPre nego sto krenete molimo vas procitajte **PRAVILA**`)
+        .setDescription(`Dobrodosli ${member2} na nas server.\n\nInvajtovan od strane **${Inviter}**\nNadamo se da ce te uzivati.\n\nMi smo zajednica koja se trudi da ostvari komunikaciju izmedju ljudi, kao i da vam doprinese odlicnu zabavu.\nPre nego sto krenete molimo vas procitajte **PRAVILA**`)
         .setTimestamp(new Date())
     member.user.send(embed)
     channel.send(embed);
