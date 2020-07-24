@@ -13,9 +13,6 @@ client.on('ready', () =>{
 });
 
 client.on('guildMemberAdd', member =>{
-    member.guild.fetchInvites().then(invites => {
-        const Inviter = invites.array().filter(o => o.inviter.username)
-    });
     const member2 = member.user.username
     const guild = client.guilds.cache.get('735645868413288510')
     const role = guild.roles.cache.get('735649648727031908')
