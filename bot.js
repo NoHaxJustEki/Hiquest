@@ -159,7 +159,7 @@ client.on('message', msg => {
                     const embed = new Discord.MessageEmbed()
                     .setColor(`#115aed`)
                     .setTitle('**User Check**')
-                   - .setDescription(`Account: ${user.username}\nCreated at: ${user.createdAt}`)
+                    .setDescription(`Account: ${user.username}\nCreated at: ${user.createdAt}`)
                     .setTimestamp(new Date())
                     msg.channel.send(embed)
                     
