@@ -466,7 +466,7 @@ client.on('message', async msg =>{
 
 client.on('message', async msg =>{
     if(msg.content.startsWith('#resetall')){
-        if(msg.member.hasPermission('ADMINISTRATOR'){
+        if(msg.member.hasPermission('ADMINISTRATOR')){
             msg.members.forEach(member =>{
                  const fetch = await eco.Delete(member.user.id)
             });
