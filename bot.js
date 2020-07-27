@@ -38,7 +38,7 @@ client.on('guildMemberAdd', member =>{
 		const embed = new Discord.MessageEmbed()
             .setColor('#115aed')
             .setTitle('**Welcome to Coomunity Discord Server**')
-            .setDescription(`Dobrodosli ${member2} na nas server.\nNadamo se da ce te uzivati.\n\nMi smo zajednica koja se trudi da ostvari komunikaciju izmedju ljudi, kao i da vam doprinese odlicnu zabavu.\nPre nego sto krenete molimo vas procitajte **PRAVILA**\n\nInvajtovan od strane **${inviter.tag}**\nInvite Link: https://discord.gg/invite/${invite.code}`)
+            .setDescription(`Dobrodosli ${member.user.toString()} na nas server.\nNadamo se da ce te uzivati.\n\nMi smo zajednica koja se trudi da ostvari komunikaciju izmedju ljudi, kao i da vam doprinese odlicnu zabavu.\nPre nego sto krenete molimo vas procitajte **PRAVILA**\n\nInvajtovan od strane **${inviter.tag}**\nInvite Link: https://discord.gg/invite/${invite.code}`)
             .setTimestamp(new Date())
         channel.send(embed);
         member.roles.add(role)
