@@ -77,7 +77,7 @@ client.on('message', msg => {
             .setColor('#115aed')
             .setAuthor(msg.author.username)
             .setTitle('**Community | Pomoc**')
-            .setDescription('Trenutno dostupne komande na nasem serveru:\n\n**Staff Komande:**\n\n#check - Proverite korisnika\n#clear - Ocistite chat\n#say - Postavite obavestenje\n\n**Member Komande:**\n\n#invites - Proverite invajtove\n#av - Pogledajte avatar\n\nUskoro jos novih komandi za membere.')
+            .setDescription('Trenutno dostupne komande na nasem serveru:\n\n**Staff Komande:**\n\n#check - Proverite korisnika\n#clear - Ocistite chat\n#say - Postavite obavestenje\n#dodaj - Dodajte novac igracu\n#oduzmi - Oduzmite novac igracu\n#reset - Resetiraj novac igracu\n#resetall - Resetirajte svima novac\n#giveall - Dodajte svima novac\n\n**Member Komande:**\n\n#invites - Proverite invajtove\n#av - Pogledajte avatar\n#novac - Proverite stanje na racunu\n#posao - Radite posao (samo u #radi-posao kanalu)\n#opljackaj - Opljackaj korisnika (1% Sanse)\n\n\nUskoro jos novih komandi za membere.')
         msg.delete();
         msg.channel.send(embed);
 
