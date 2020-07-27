@@ -455,7 +455,7 @@ client.on('message', async msg =>{
 
 client.on('message', async msg =>{
     if(msg.content.startsWith('#reset')){
-        if(msg.member.hasPermission('ADMINISTRATOR'){
+        if(msg.member.hasPermission('ADMINISTRATOR')){
             const user = msg.mentions.users.first() || msg.author;
             var fetch = await eco.Delete(user.id)
             msg.channel.send(`> Uspesno ste resetovali racun od ${user.username}`)
