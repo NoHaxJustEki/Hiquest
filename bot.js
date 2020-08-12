@@ -19,16 +19,15 @@ client.on('message', async msg => {
 client.on('message', msg => {
     if(msg.channel.id == "736019810777038898"){
         if(!msg.author.id == "427430166319595531" || !msg.author.bot){
-            if(!msg.content == "#verify"){
-                msg.delete();
-            }
-            else {
+            if(msg.content == "#verify"){
                 const role = msg.guild.roles.cache.get('735649648727031908')
                 msg.member.roles.add(role)
                 msg.delete();
+            } else {
+                msg.delete()
             }
-        }
-        
+                
+            }
         }
       
 });
@@ -222,4 +221,4 @@ client.on('message', async msg => {
 
 
 
-client.login('NjE1ODc4NTU4NTc2OTM0OTIy.XWUbmg.Y1x2HSN7NMZx1GWMY50_8DHWVZ8');
+client.login(process.env.BOT_TOKEN);
